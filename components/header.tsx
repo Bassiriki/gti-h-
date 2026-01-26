@@ -54,7 +54,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-secondary ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-card"
+                className={`text-base transition-colors hover:text-secondary ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-card"
                   }`}
               >
                 {link.label}
@@ -66,13 +66,13 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="tel:+221788694657"
-              className={`flex items-center gap-2 text-sm font-medium transition-colors ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-card"
+              className={`flex items-center gap-2 text-base font-medium transition-colors ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-card"
                 }`}
             >
               <Phone className="h-4 w-4" />
               <span>+221 78 869 46 57</span>
             </Link>
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-base">
               Demander un devis
             </Button>
           </div>
@@ -106,7 +106,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-secondary ${isScrolled ? "text-foreground" : "text-foreground"
+                  className={`text-base transition-colors hover:text-secondary ${isScrolled ? "text-foreground" : "text-foreground"
                     }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -116,12 +116,12 @@ export function Header() {
               <div className="flex flex-col gap-4 pt-2 border-t border-border/10">
                 <Link
                   href="tel:+221788694657"
-                  className="flex items-center gap-2 text-sm font-medium text-foreground"
+                  className="flex items-center gap-2 text-base font-medium text-foreground"
                 >
                   <Phone className="h-4 w-4" />
                   <span>+221 78 869 46 57</span>
                 </Link>
-                <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full">
+                <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full text-base">
                   Demander un devis
                 </Button>
               </div>

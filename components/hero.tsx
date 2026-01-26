@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowRight, MapPin, Truck, FileCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, FileCheck, MapPin, Truck } from "lucide-react";
 import Image from "next/image";
 
 export function Hero() {
@@ -19,7 +19,7 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/10" />
       </div>
 
       {/* Content */}

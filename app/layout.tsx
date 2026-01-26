@@ -1,7 +1,7 @@
-import React from "react"
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
+import React from "react"
 import './globals.css'
 
 const _inter = Inter({ subsets: ["latin"] });
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   generator: 'v0.app',
   icons: {
     icon: [
-      { 
+      {
         url: '/logo-gti-h.png',
         media: '(prefers-color-scheme: light)',
       },
