@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, FileCheck, MapPin, Truck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -23,42 +24,48 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-24">
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-32 pb-8">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-2 mb-6">
+          <div className="flex items-center gap-2 mb-3">
             <div className="h-1 w-12 bg-secondary" />
             <span className="text-secondary font-medium text-sm uppercase tracking-wider">
               Groupe  Torodo International Holding
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4">
             <span className="text-balance">
               Votre partenaire en{" "}
               <span className="text-white">Transit, Logistique, Transport et Commerce General</span>
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-2xl">
+          <p className="text-lg md:text-xl text-white/80 mb-6 leading-relaxed max-w-2xl">
             GTI-HOLDING S.A.R.L accompagne les entreprises et particuliers avec
             des solutions logistiques efficaces, rapides et économiques à travers
             l&apos;Afrique de l&apos;Ouest.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Button
+              asChild
               size="lg"
               className="bg-secondary hover:bg-secondary/90 text-secondary-foreground gap-2"
             >
-              Nos Services
-              <ArrowRight className="h-4 w-4" />
+              <Link href="/#services">
+                Nos Services
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-black bg-transparent"
             >
-              Contactez-nous
+              <Link href="/#contact">
+                Contactez-nous
+              </Link>
             </Button>
           </div>
 

@@ -28,7 +28,7 @@ const items = [
 
 export function About() {
   return (
-    <section id="a-propos" className="py-20 lg:py-32 bg-white">
+    <section id="a-propos" className="py-20 lg:py-32 bg-white scroll-mt-32">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row gap-12 lg:items-start mb-20">
@@ -83,12 +83,12 @@ export function About() {
                 </div>
 
                 {/* Footer: Title & Description */}
-                <div className="transform transition-all duration-300 group-hover:-translate-y-2">
-                  <h3 className="text-3xl font-bold text-white uppercase leading-tight mb-2 max-w-[80%]">
+                <div className="transform transition-all duration-300">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white uppercase leading-tight mb-3">
                     {item.title}
                   </h3>
-                  <div className="h-1 w-12 bg-secondary mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                  <div className="h-1 w-12 bg-secondary mb-4" />
+                  <p className="text-gray-200 text-sm lg:text-base leading-relaxed">
                     {item.description}
                   </p>
                 </div>

@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react"
+import React from "react";
 
-import { useState } from "react";
-import { Phone, Mail, MapPin, Send, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Clock, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useState } from "react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-background">
+    <section id="contact" className="py-20 lg:py-32 bg-background scroll-mt-32">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

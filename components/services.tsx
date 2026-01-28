@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function Services() {
   return (
-    <section id="services" className="py-20 lg:py-32 bg-zinc-50/50">
+    <section id="services" className="py-20 lg:py-32 bg-zinc-50/50 scroll-mt-32">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16 mx-auto text-center">
@@ -83,11 +83,11 @@ export function Services() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <Link href="/#contact">
-            <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
+          <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
+            <Link href="/#contact">
               Passez à l&apos;action
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

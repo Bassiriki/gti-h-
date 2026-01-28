@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Building2, Phone, Mail } from "lucide-react";
+import { Building2, Mail, MapPin, Phone } from "lucide-react";
 
 const locations = [
   {
@@ -47,7 +47,7 @@ const locations = [
 
 export function Locations() {
   return (
-    <section id="implantations" className="py-20 lg:py-32 bg-muted">
+    <section id="implantations" className="py-20 lg:py-32 bg-muted scroll-mt-32">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -85,46 +85,41 @@ export function Locations() {
             {locations.map((location, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-xl border transition-all duration-300 hover:shadow-md ${
-                  location.isHeadquarters
+                className={`p-6 rounded-xl border transition-all duration-300 hover:shadow-md ${location.isHeadquarters
                     ? "bg-primary border-primary"
                     : "bg-background border-border hover:border-primary/50"
-                }`}
+                  }`}
               >
                 <div className="flex items-start gap-4">
                   <div
-                    className={`h-12 w-12 rounded-lg flex items-center justify-center shrink-0 ${
-                      location.isHeadquarters
+                    className={`h-12 w-12 rounded-lg flex items-center justify-center shrink-0 ${location.isHeadquarters
                         ? "bg-primary-foreground/20"
                         : "bg-primary/10"
-                    }`}
+                      }`}
                   >
                     {location.isHeadquarters ? (
                       <Building2
-                        className={`h-6 w-6 ${
-                          location.isHeadquarters
+                        className={`h-6 w-6 ${location.isHeadquarters
                             ? "text-primary-foreground"
                             : "text-primary"
-                        }`}
+                          }`}
                       />
                     ) : (
                       <MapPin
-                        className={`h-6 w-6 ${
-                          location.isHeadquarters
+                        className={`h-6 w-6 ${location.isHeadquarters
                             ? "text-primary-foreground"
                             : "text-primary"
-                        }`}
+                          }`}
                       />
                     )}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <h3
-                        className={`font-bold ${
-                          location.isHeadquarters
+                        className={`font-bold ${location.isHeadquarters
                             ? "text-primary-foreground"
                             : "text-foreground"
-                        }`}
+                          }`}
                       >
                         {location.country}
                       </h3>
@@ -135,47 +130,42 @@ export function Locations() {
                       )}
                     </div>
                     <p
-                      className={`text-sm mb-3 ${
-                        location.isHeadquarters
+                      className={`text-sm mb-3 ${location.isHeadquarters
                           ? "text-primary-foreground/80"
                           : "text-muted-foreground"
-                      }`}
+                        }`}
                     >
                       {location.city} - {location.description}
                     </p>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <Phone
-                          className={`h-3.5 w-3.5 ${
-                            location.isHeadquarters
+                          className={`h-3.5 w-3.5 ${location.isHeadquarters
                               ? "text-primary-foreground/60"
                               : "text-muted-foreground"
-                          }`}
+                            }`}
                         />
                         <span
-                          className={`text-xs ${
-                            location.isHeadquarters
+                          className={`text-xs ${location.isHeadquarters
                               ? "text-primary-foreground/80"
                               : "text-muted-foreground"
-                          }`}
+                            }`}
                         >
                           {location.phone}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Mail
-                          className={`h-3.5 w-3.5 ${
-                            location.isHeadquarters
+                          className={`h-3.5 w-3.5 ${location.isHeadquarters
                               ? "text-primary-foreground/60"
                               : "text-muted-foreground"
-                          }`}
+                            }`}
                         />
                         <span
-                          className={`text-xs ${
-                            location.isHeadquarters
+                          className={`text-xs ${location.isHeadquarters
                               ? "text-primary-foreground/80"
                               : "text-muted-foreground"
-                          }`}
+                            }`}
                         >
                           {location.email}
                         </span>
