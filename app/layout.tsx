@@ -1,11 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 import React from "react"
 import './globals.css'
 
-const _inter = Inter({ subsets: ["latin"] });
-const _poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-open-sans',
+});
 
 export const metadata: Metadata = {
   title: 'GTI-HOLDING S.A.R.L | Transit, Logistique & Transport en Afrique de l\'Ouest',
@@ -36,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`}>
+    <html lang="fr">
+      <body className={`${openSans.className} antialiased`}>
         {children}
         <Analytics />
       </body>

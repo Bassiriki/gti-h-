@@ -32,15 +32,14 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-card leading-tight mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
             <span className="text-balance">
               Votre partenaire en{" "}
-              <span className="text-secondary">Transit, Logistique</span> et{" "}
-              <span className="text-secondary">Transport</span>
+              <span className="text-white">Transit, Logistique, Transport et Commerce General</span>
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-card/80 mb-8 leading-relaxed max-w-2xl">
+          <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-2xl">
             GTI-HOLDING S.A.R.L accompagne les entreprises et particuliers avec
             des solutions logistiques efficaces, rapides et économiques à travers
             l&apos;Afrique de l&apos;Ouest.
@@ -57,39 +56,39 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="border-card text-card hover:bg-card hover:text-foreground bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-black bg-transparent"
             >
               Contactez-nous
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-card/20">
+          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-lg bg-secondary/20 flex items-center justify-center">
-                <MapPin className="h-6 w-6 text-secondary" />
+                <MapPin className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-card">5</p>
-                <p className="text-sm text-card/60">Pays</p>
+                <p className="text-2xl font-bold text-white">5</p>
+                <p className="text-sm text-white/60">Pays</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-lg bg-secondary/20 flex items-center justify-center">
-                <Truck className="h-6 w-6 text-secondary" />
+                <Truck className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-card">4</p>
-                <p className="text-sm text-card/60">Services</p>
+                <p className="text-2xl font-bold text-white">4</p>
+                <p className="text-sm text-white/60">Services</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-lg bg-secondary/20 flex items-center justify-center">
-                <FileCheck className="h-6 w-6 text-secondary" />
+                <FileCheck className="h-6 w-6 text-white" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-card">100%</p>
-                <p className="text-sm text-card/60">Fiabilité</p>
+                <p className="text-2xl font-bold text-white">100%</p>
+                <p className="text-sm text-white/60">Fiabilité</p>
               </div>
             </div>
           </div>
