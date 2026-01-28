@@ -2,10 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Mail, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Topbar } from "./topbar";
 
 const servicesData = [
   {
@@ -40,35 +41,6 @@ const servicesData = [
   },
 ];
 
-const presenceData = [
-  { country: "Sénégal", code: "sn" },
-  { country: "Guinée", code: "gn" },
-  { country: "Côte d'Ivoire", code: "ci" },
-  { country: "Togo", code: "tg" },
-  { country: "Ghana", code: "gh" },
-];
-
-function PresenceFlags() {
-  return (
-    <div className="flex items-center gap-3">
-      {presenceData.map((item) => (
-        <div
-          key={item.code}
-          className="relative w-6 h-4 shadow-sm border border-white/10 rounded-sm overflow-hidden shrink-0"
-          title={item.country}
-        >
-          <Image
-            src={`https://flagcdn.com/w80/${item.code}.png`}
-            alt={`Drapeau ${item.country}`}
-            fill
-            className="object-cover"
-            unoptimized
-          />
-        </div>
-      ))}
-    </div>
-  );
-}
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -103,32 +75,15 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled || isMobileMenuOpen
-        ? "bg-card/95 backdrop-blur-md shadow-lg"
-        : "bg-card shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
+        ? "bg-white/95 backdrop-blur-md shadow-md"
+        : "bg-white shadow-sm"
         }`}
     >
-      {/* Top Bar */}
-      <div className={`bg-neutral-900 text-white transition-all duration-500 ease-in-out overflow-hidden ${isScrolled || isMobileMenuOpen ? "max-h-0 opacity-0" : "max-h-10 opacity-100"}`}>
-        <div className="container mx-auto px-4 lg:px-8 h-10 flex items-center justify-between text-[13px] font-medium">
-          <div className="flex items-center gap-6">
-            <Link href="tel:+221788694657" className="flex items-center gap-2 hover:text-secondary transition-colors">
-              <Phone className="h-3.5 w-3.5 text-secondary" />
-              <span>+221 78 869 46 57</span>
-            </Link>
-            <Link href="mailto:contact@gti-holding.com" className="flex items-center gap-2 hover:text-secondary transition-colors">
-              <Mail className="h-3.5 w-3.5 text-secondary" />
-              <span>contact@gti-holding.com</span>
-            </Link>
-          </div>
-          <div className="hidden md:flex items-center gap-4 text-white/70 overflow-hidden">
-            <PresenceFlags />
-          </div>
-        </div>
-      </div>
+      <Topbar isScrolled={isScrolled} />
 
-      <div className={`container mx-auto px-4 lg:px-8 transition-all duration-300 py-4`}>
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? "h-14" : "h-16"}`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -136,7 +91,7 @@ export function Header() {
               alt="GTI Holding Logo"
               width={120}
               height={40}
-              className="h-10 w-auto object-contain"
+              className={`transition-transform duration-300 origin-left object-contain h-8 w-auto ${isScrolled ? "scale-90" : "scale-100"}`}
               priority
             />
           </Link>
@@ -153,7 +108,7 @@ export function Header() {
               >
                 {link.label === "Services" ? (
                   <button
-                    className={`flex items-center gap-1 text-base transition-colors hover:text-secondary group text-foreground`}
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-secondary group text-foreground`}
                   >
                     {link.label}
                     <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
@@ -161,7 +116,7 @@ export function Header() {
                 ) : (
                   <Link
                     href={link.href}
-                    className={`text-base transition-colors hover:text-secondary text-foreground`}
+                    className={`text-sm font-medium transition-colors hover:text-secondary text-foreground`}
                   >
                     {link.label}
                   </Link>
@@ -176,9 +131,9 @@ export function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 15 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="absolute top-full -left-48 w-[800px] pt-6 z-50 pointer-events-auto"
+                        className="absolute top-full left-1/2 -translate-x-1/2 w-[90vw] max-w-[800px] pt-6 z-50 pointer-events-auto"
                       >
-                        <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex border border-border/50">
+                        <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex border border-border/50 max-h-[70vh] overflow-y-auto">
                           {/* Sidebar */}
                           <div className="w-24 bg-secondary flex items-center justify-center relative overflow-hidden shrink-0">
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_70%)]" />
@@ -223,7 +178,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
 
-            <Button asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-base">
+            <Button asChild size="sm" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-sm font-bold h-9">
               <Link href="/#contact">
                 Contactez-nous
               </Link>
@@ -233,101 +188,106 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 rounded-md hover:bg-zinc-100 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X
-                className={`h-6 w-6 text-foreground`}
-              />
+              <X className="h-6 w-6 text-zinc-900" />
             ) : (
-              <Menu
-                className={`h-6 w-6 text-foreground`}
-              />
+              <Menu className="h-6 w-6 text-zinc-900" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-6 border-t border-border/20">
-            <nav className="flex flex-col gap-4 pt-4">
-              {navLinks.map((link) => (
-                <div key={link.href} className="flex flex-col">
-                  {link.label === "Services" ? (
-                    <>
-                      <button
-                        onClick={() => setActiveMenu(activeMenu === "mobile-services" ? null : "mobile-services")}
-                        className="flex items-center justify-between text-base transition-colors hover:text-secondary text-foreground py-2"
-                      >
-                        {link.label}
-                        <ChevronDown className={`h-4 w-4 transition-transform ${activeMenu === "mobile-services" ? "rotate-180" : ""}`} />
-                      </button>
-                      <AnimatePresence>
-                        {activeMenu === "mobile-services" && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden bg-muted/30 rounded-lg px-4"
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden border-t border-zinc-100 bg-white overflow-hidden"
+            >
+              <div className="container mx-auto px-4 py-6 max-h-[calc(100vh-80px)] overflow-y-auto">
+                <nav className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                    <div key={link.href} className="flex flex-col">
+                      {link.label === "Services" ? (
+                        <>
+                          <button
+                            onClick={() => setActiveMenu(activeMenu === "mobile-services" ? null : "mobile-services")}
+                            className="flex items-center justify-between text-base transition-colors hover:text-secondary text-foreground py-2"
                           >
-                            {servicesData.map((category, idx) => (
-                              <div key={idx} className="py-3 border-b border-border/10 last:border-0">
-                                <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-2">
-                                  {category.category}
-                                </p>
-                                <ul className="flex flex-col gap-2">
-                                  {category.items.map((item, i) => (
-                                    <li key={i}>
-                                      <Link
-                                        href={`/services/${item.slug}`}
-                                        className="text-sm text-foreground/70 hover:text-secondary py-1 block"
-                                        onClick={() => {
-                                          setIsMobileMenuOpen(false);
-                                          setActiveMenu(null);
-                                        }}
-                                      >
-                                        • {item.label}
-                                      </Link>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </>
-                  ) : (
+                            {link.label}
+                            <ChevronDown className={`h-4 w-4 transition-transform ${activeMenu === "mobile-services" ? "rotate-180" : ""}`} />
+                          </button>
+                          <AnimatePresence>
+                            {activeMenu === "mobile-services" && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="overflow-hidden bg-muted/30 rounded-lg px-4"
+                              >
+                                {servicesData.map((category, idx) => (
+                                  <div key={idx} className="py-3 border-b border-border/10 last:border-0">
+                                    <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-2">
+                                      {category.category}
+                                    </p>
+                                    <ul className="flex flex-col gap-2">
+                                      {category.items.map((item, i) => (
+                                        <li key={i}>
+                                          <Link
+                                            href={`/services/${item.slug}`}
+                                            className="text-sm text-foreground/70 hover:text-secondary py-1 block"
+                                            onClick={() => {
+                                              setIsMobileMenuOpen(false);
+                                              setActiveMenu(null);
+                                            }}
+                                          >
+                                            • {item.label}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className={`text-base transition-colors hover:text-secondary pt-2 ${isScrolled ? "text-foreground" : "text-foreground"
+                            }`}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                  <div className="flex flex-col gap-4 pt-2 border-t border-border/10">
                     <Link
-                      href={link.href}
-                      className={`text-base transition-colors hover:text-secondary pt-2 ${isScrolled ? "text-foreground" : "text-foreground"
-                        }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      href="tel:+221788694657"
+                      className="flex items-center gap-2 text-base font-medium text-foreground"
                     >
-                      {link.label}
+                      <Phone className="h-4 w-4" />
+                      <span>+221 78 869 46 57</span>
                     </Link>
-                  )}
-                </div>
-              ))}
-              <div className="flex flex-col gap-4 pt-2 border-t border-border/10">
-                <Link
-                  href="tel:+221788694657"
-                  className="flex items-center gap-2 text-base font-medium text-foreground"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span>+221 78 869 46 57</span>
-                </Link>
-                <Button asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full text-base">
-                  <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    Demander un devis
-                  </Link>
-                </Button>
+                    <Button asChild className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-full text-base">
+                      <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                        Demander un devis
+                      </Link>
+                    </Button>
+                  </div>
+                </nav>
               </div>
-            </nav>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

@@ -70,7 +70,7 @@ export function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-lg bg-secondary/20 flex items-center justify-center">
                 <MapPin className="h-6 w-6 text-white" />

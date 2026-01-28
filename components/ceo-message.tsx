@@ -13,7 +13,7 @@ export function CEOMessage() {
                         {/* Image Column - Structured side */}
                         <div className="relative w-full lg:w-2/5 aspect-[4/5] lg:aspect-auto min-h-[450px]">
                             <Image
-                                src="/images/director.jpg"
+                                src="/images/PDG Gti.png"
                                 alt="Directeur Général"
                                 fill
                                 className="object-cover"
@@ -21,7 +21,7 @@ export function CEOMessage() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
                             <div className="absolute bottom-6 left-6 text-white lg:hidden">
-                                <p className="text-xl font-bold">M. Bassiriki</p>
+                                <p className="text-xl font-bold">M. Harouna Abdoulaye Aliou Bachirou</p>
                                 <p className="text-sm opacity-90">Directeur Général</p>
                             </div>
                         </div>
@@ -65,11 +65,11 @@ export function CEOMessage() {
                                     <div className="flex items-center gap-4">
                                         <div className="h-12 w-12 rounded-full border-2 border-secondary/20 p-1">
                                             <div className="w-full h-full rounded-full overflow-hidden relative">
-                                                <Image src="/images/director.jpg" alt="Signature" fill className="object-cover" />
+                                                <Image src="/images/PDG Gti.png" alt="Signature" fill className="object-cover" />
                                             </div>
                                         </div>
                                         <div>
-                                            <p className="text-lg font-bold text-zinc-900 leading-none mb-1">M. Bassiriki</p>
+                                            <p className="text-lg font-bold text-zinc-900 leading-none mb-1">M. Harouna Abdoulaye Aliou Bachirou</p>
                                             <p className="text-xs font-medium text-zinc-400 uppercase tracking-widest">Directeur Général</p>
                                         </div>
                                     </div>

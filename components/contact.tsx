@@ -111,8 +111,8 @@ export function Contact() {
           {/* Contact Form Column */}
           <div className="lg:col-span-8">
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="bg-white rounded-2xl border border-zinc-200/60 p-8 lg:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.03)]"
             >
