@@ -33,14 +33,14 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4">
+          <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold text-white leading-[1.1] mb-4">
             <span className="text-balance">
               Votre partenaire en{" "}
               <span className="text-white">Transit, Logistique, Transport et Commerce General</span>
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/80 mb-6 leading-relaxed max-w-2xl">
+          <p className="text-sm md:text-base text-white/70 mb-6 leading-relaxed max-w-xl">
             GTI-HOLDING S.A.R.L accompagne les entreprises et particuliers avec
             des solutions logistiques efficaces, rapides et économiques à travers
             l&apos;Afrique de l&apos;Ouest.

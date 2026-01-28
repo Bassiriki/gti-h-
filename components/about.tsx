@@ -1,25 +1,25 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const items = [
   {
     number: "01",
-    title: "NOTRE VISION",
+    title: "Notre Vision",
     description:
       "Devenir un acteur majeur de la logistique intégrée et du commerce en Afrique de l'Ouest, en alliant fiabilité, professionnalisme et innovation.",
     image: "/images/hero-logistics.jpg",
   },
   {
     number: "02",
-    title: "NOTRE MISSION",
+    title: "Notre Mission",
     description:
       "Offrir à nos partenaires et clients des solutions efficaces, rapides et économiques, adaptées à leurs besoins spécifiques dans un environnement concurrentiel.",
     image: "/images/transit-douane.jpg",
   },
   {
     number: "03",
-    title: "NOS VALEURS",
+    title: "Nos Valeurs",
     description:
       "Intégrité et transparence, efficacité et rapidité, respect des engagements, innovation et amélioration continue.",
     image: "/images/transport-terrestre.jpg",
@@ -28,69 +28,61 @@ const items = [
 
 export function About() {
   return (
-    <section id="a-propos" className="py-20 lg:py-32 bg-white scroll-mt-32">
+    <section id="a-propos" className="py-24 lg:py-32 bg-white scroll-mt-32">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Header */}
+        {/* Header - Ant Design Style */}
         <div className="flex flex-col lg:flex-row gap-12 lg:items-start mb-20">
           <div className="flex-1">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Un groupe ouest-africain <br />
-              <span className="text-secondary border-b-4 border-secondary/20 pb-2">
-                dynamique
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-[2px] w-8 bg-secondary rounded-full" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">
+                Qui sommes-nous
               </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-semibold text-zinc-900 mb-4 leading-tight tracking-tight">
+              Un groupe ouest-africain <br />
+              <span className="text-secondary">dynamique et engagé</span>
             </h2>
           </div>
-          <div className="flex-1 lg:max-w-2xl">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Groupe Torodo International Holding S.A.R.L</strong> est
-              un groupe spécialisé dans les domaines du transit, de la logistique,
-              du transport, du commerce général et des prestations de services
-              multisectorielles. Fortement implantée en Afrique de l&apos;Ouest,
-              l&apos;entreprise dispose de représentations dans plusieurs pays
-              stratégiques.
+          <div className="flex-1 lg:max-w-2xl pt-2">
+            <p className="text-lg text-zinc-500 leading-relaxed font-normal">
+              <strong className="text-zinc-900 font-semibold">Groupe Torodo International Holding S.A.R.L</strong> est
+              une structure spécialisée dans le transit, la logistique,
+              le transport et le commerce général. Fortement implantée en Afrique de l&apos;Ouest,
+              nous accompagnons nos clients avec une expertise reconnue et des solutions sur mesure.
             </p>
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-4">
+        {/* Cards Grid - Ant Design Style */}
+        <div className="grid md:grid-cols-3 gap-8">
           {items.map((item, index) => (
             <div
               key={index}
-              className="group relative h-[500px] w-full overflow-hidden bg-zinc-900 shadow-xl"
+              className="bg-zinc-50/50 rounded-2xl border border-zinc-200/60 p-8 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:bg-white hover:border-secondary/30 transition-all duration-300"
             >
-              {/* Background with Overlay */}
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors z-10" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20" />
-
-              {/* Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                  backgroundColor: "#1a1a1a",
-                }}
-              />
-
-              {/* Content Container */}
-              <div className="relative z-30 h-full flex flex-col justify-between p-8">
-                {/* Header: Number & Arrow */}
-                <div className="flex items-start justify-between">
-                  <span className="text-7xl font-bold text-secondary font-sans leading-none tracking-tighter">
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between mb-8">
+                  <span className="text-4xl font-bold text-zinc-200 group-hover:text-secondary/20 transition-colors">
                     {item.number}
                   </span>
-                  <ArrowUpRight className="h-8 w-8 text-secondary/80 stroke-[1.5] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <div className="h-10 w-10 bg-white rounded-lg flex items-center justify-center border border-zinc-100 shadow-sm">
+                    <ArrowRight className="h-4 w-4 text-secondary" />
+                  </div>
                 </div>
 
-                {/* Footer: Title & Description */}
-                <div className="transform transition-all duration-300">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white uppercase leading-tight mb-3">
-                    {item.title}
-                  </h3>
-                  <div className="h-1 w-12 bg-secondary mb-4" />
-                  <p className="text-gray-200 text-sm lg:text-base leading-relaxed">
-                    {item.description}
-                  </p>
+                <h3 className="text-xl font-bold text-zinc-900 uppercase tracking-wider mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-zinc-500 leading-relaxed text-[15px] font-normal">
+                  {item.description}
+                </p>
+
+                <div className="mt-8 pt-8 border-t border-zinc-100/80">
+                  <div className="relative aspect-video rounded-xl overflow-hidden hover:opacity-100 transition-all duration-500">
+                    <img src={item.image} alt={item.title} className="object-cover w-full h-full" />
+                  </div>
                 </div>
               </div>
             </div>

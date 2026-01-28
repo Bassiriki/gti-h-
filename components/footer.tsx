@@ -1,7 +1,7 @@
 "use client";
 
+import { ArrowUp, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -37,44 +37,45 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-foreground text-card">
+    <footer className="bg-zinc-900 text-zinc-400">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Main Footer */}
-        <div className="py-16 lg:py-20 grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="py-16 lg:py-24 grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center mb-6">
-              <span className="text-2xl font-bold text-card">GTI</span>
-              <span className="text-2xl font-bold text-secondary">-HOLDING</span>
+          <div className="lg:col-span-4 max-w-sm">
+            <Link href="/" className="inline-flex items-center mb-8">
+              <span className="text-2xl font-bold text-white tracking-tight">GTI</span>
+              <span className="text-2xl font-bold text-secondary tracking-tight">-HOLDING</span>
             </Link>
-            <p className="text-card/70 leading-relaxed mb-6 max-w-sm">
+            <p className="text-zinc-400 leading-relaxed mb-8 text-[15px]">
               Groupe ouest-africain spécialisé dans le transit, la logistique, le
-              transport et le commerce général. Votre partenaire de confiance en
-              Afrique de l&apos;Ouest.
+              transport et le commerce général. Basé à Rue Tolbiac, Dakar, Sénégal.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="h-10 w-10 rounded-lg bg-card/10 flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                  className="h-9 w-9 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all duration-300"
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
           </div>
 
+          <div className="lg:col-span-1 hidden lg:block" />
+
           {/* Services */}
-          <div>
-            <h4 className="font-bold text-card mb-4">Services</h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-6">Services</h4>
+            <ul className="space-y-4">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-card/70 hover:text-secondary transition-colors text-sm"
+                    className="hover:text-secondary transition-colors text-[14px] font-medium"
                   >
                     {link.label}
                   </Link>
@@ -84,14 +85,14 @@ export function Footer() {
           </div>
 
           {/* Entreprise */}
-          <div>
-            <h4 className="font-bold text-card mb-4">Entreprise</h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-6">Entreprise</h4>
+            <ul className="space-y-4">
               {footerLinks.entreprise.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-card/70 hover:text-secondary transition-colors text-sm"
+                    className="hover:text-secondary transition-colors text-[14px] font-medium"
                   >
                     {link.label}
                   </Link>
@@ -101,14 +102,14 @@ export function Footer() {
           </div>
 
           {/* Support */}
-          <div>
-            <h4 className="font-bold text-card mb-4">Support</h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-3">
+            <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-6">Support & Contact</h4>
+            <ul className="space-y-4">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-card/70 hover:text-secondary transition-colors text-sm"
+                    className="hover:text-secondary transition-colors text-[14px] font-medium"
                   >
                     {link.label}
                   </Link>
@@ -119,30 +120,32 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-card/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-card/60 text-sm">
+        <div className="py-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-zinc-500 text-sm font-medium">
             © {new Date().getFullYear()} GTI-HOLDING S.A.R.L. Tous droits réservés.
           </p>
-          <div className="flex items-center gap-6">
-            <Link
-              href="#"
-              className="text-card/60 hover:text-card text-sm transition-colors"
-            >
-              Mentions légales
-            </Link>
-            <Link
-              href="#"
-              className="text-card/60 hover:text-card text-sm transition-colors"
-            >
-              Politique de confidentialité
-            </Link>
+          <div className="flex items-center gap-8">
+            <div className="flex items-center gap-6">
+              <Link
+                href="#"
+                className="text-zinc-500 hover:text-white text-xs font-medium transition-colors"
+              >
+                Mentions légales
+              </Link>
+              <Link
+                href="#"
+                className="text-zinc-500 hover:text-white text-xs font-medium transition-colors"
+              >
+                Confidentialité
+              </Link>
+            </div>
             <button
               type="button"
               onClick={scrollToTop}
-              className="h-10 w-10 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center hover:bg-secondary/90 transition-colors"
+              className="h-10 w-10 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all duration-300 shadow-lg"
               aria-label="Retour en haut"
             >
-              <ArrowUp className="h-5 w-5" />
+              <ArrowUp className="h-4 w-4" />
             </button>
           </div>
         </div>
